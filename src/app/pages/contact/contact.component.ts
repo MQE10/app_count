@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PaisesService } from '../../services/paises.service';
+
 
 @Component({
   selector: 'app-contact',
@@ -8,25 +10,30 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
   formcontacto:formcontacto =
   {
-    nombre: "",
-    asunto: "",
-    descripcion: ""
+    nombre: ""
   }
-  constructor() { }
-
+ paises:any = [];
+  constructor(private paisess:PaisesService) {
+    paisess.traer_paises().subscribe(resp=>{
+      this.paises=resp;
+    console.log(this.paises);
+    })
+   }
   ngOnInit(): void {
-
+    // this.save();
   }
+
   guardar()
   {
-    console.log(this.formcontacto)
+  }
+
+  save(){
+    this.paisess.crearPais(this.formcontacto).subscribe((resp: any) => {console.log(resp)});
   }
 }
 
 interface formcontacto
 {
-    nombre: string,
-    asunto: string,
-    descripcion: string
+    nombre: string
 }
 

@@ -2,26 +2,36 @@
     <div class="col-2"></div>
     <div class="col-8">
         <div class="card p-3">
-            <form (ngSubmit)="guardar()">
+            <form (ngSubmit)="save()">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <li scope="row" *ngFor="let pais of paises" >
+                      {{pais.name}}
+                    </li>
+                  </tr>
+                </tbody>
+              </table>
                 <h3>CRUD DE DATOS</h3>
                 <div>
                     <div class="mb-3">
                         <label  class="form-label">Nombre</label>
-                        <input  class="form-control" [(ngModel)]="formcontacto.nombre" name="nombre" placeholder="nombre completo">
-                      </div>
-                      <div class="mb-3">
-                        <label   class="form-label">Asunto</label>
-                        <input  class="form-control" [(ngModel)]="formcontacto.asunto"name="asunto"  placeholder="Asunto">
-                      </div>
-                      <div class="mb-3">
-                        <label  class="form-label">Descripcion</label>
-                        <textarea class="form-control" [(ngModel)]="formcontacto.descripcion" name="descripcion" rows="3" placeholder="Descipcion"></textarea>
+                        <input  class="form-control" [(ngModel)]="formcontacto.nombre" name="nombre" placeholder="Nombre location">
                       </div>
                 </div>
-                <button class="btn btn-outline-primary" style="width: 100%;" >Guardar</button>
-                <button style="width: 100%" class="btn btn-outline-secondary">Eliminar</button>
+                <button class="btn btn-outline-primary"  >Editar</button>
+                <button class="btn btn-outline-primary" style="width: 50%;" >Guardar</button>
+                <button  class="btn btn-outline-secondary">Eliminar</button>
+
             </form>
+
         </div>
     </div>
     <div class="col-2"></div>
 </div>
+
