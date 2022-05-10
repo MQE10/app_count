@@ -11,6 +11,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LocalidadesComponent } from './components/localidades/localidades.component';
 
 
 
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ContactComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    LocalidadesComponent
   ],
   imports: [
     BrowserModule,

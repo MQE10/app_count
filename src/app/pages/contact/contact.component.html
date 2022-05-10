@@ -3,34 +3,40 @@
     <div class="col-8">
         <div class="card p-3">
             <form (ngSubmit)="save()">
-              <table class="table">
+              <table class="table table-dark">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">ID Localidad</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Localidad</th>
+                    <th scope="col">costo</th>
+                    <th scope="col">disponibilidad</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody scope="row" *ngFor="let pais of paises"  >
                   <tr>
-                    <li scope="row" *ngFor="let pais of paises" >
-                      {{pais.id}}
-                      {{pais.nombre}}
-                    </li>
+                    <th scope="row">{{pais.id}}</th>
+                    <td>{{pais.nombre}}</td>
+                    <td>{{pais.costo}}</td>
+                    <td>{{pais.disponibilidad}}</td>
                   </tr>
                 </tbody>
               </table>
-                <h3>CRUD DE DATOS</h3>
+                <h2>Ingrese datos</h2>
                 <div>
-                    <div class="mb-3">
-                        <label  class="form-label">Nombre</label>
-                        <input  class="form-control" [(ngModel)]="formcontacto.nombre"  name="nombre" placeholder="Agregar locacion ">
+                    <div class="d-flex gs18 md:fd-column new-login-form">
+                        <input  class="form-control mb3" style="width: 20%;" [(ngModel)]="formcontacto.nombre"  name="nombre" placeholder="Agregar locacion ">
+                        <input  class="form-control" style="width: 20%;" [(ngModel)]="formcontacto.costo"  name="costo" placeholder="costo ">
+                        <input  class="form-control" style="width: 20%;" [(ngModel)]="formcontacto.disponibilidad"  name="disponibilidad" placeholder="disponibilidad">
                       </div>
                 </div>
                <!-- <button class="btn btn-outline-primary">Editar</button> -->
-                <button class="btn btn-outline-primary" style="width: 50%;"  >Guardar</button>
+                <button   class="btn btn-outline-primary" style="width: 50%;"  >Guardar</button>
             </form>
             <form (ngSubmit)="eliminar()">
-              <a href="./contact.component.html"></a>
-              <input class="form-control" [(ngModel)]="formcontacto.id"  name="id" placeholder="Eliminar datos">
+             <!--<a href="./contact.component.html"></a>-->
+
+
+              <input  class="form-control" [(ngModel)]="formcontacto.id"  name="id" placeholder="Id de la tabla que desea borrar">
               <button  class="btn btn-outline-secondary">Eliminar</button>
             </form>
         </div>
