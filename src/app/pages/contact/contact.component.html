@@ -6,13 +6,14 @@
               <table class="table">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">Name</th>
+                    <th scope="col">ID Localidad</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <li scope="row" *ngFor="let pais of paises" >
-                      {{pais.name}}
+                      {{pais.id}}
+                      {{pais.nombre}}
                     </li>
                   </tr>
                 </tbody>
@@ -21,15 +22,17 @@
                 <div>
                     <div class="mb-3">
                         <label  class="form-label">Nombre</label>
-                        <input  class="form-control" [(ngModel)]="formcontacto.nombre" name="nombre" placeholder="Nombre location">
+                        <input  class="form-control" [(ngModel)]="formcontacto.nombre"  name="nombre" placeholder="Agregar locacion ">
                       </div>
                 </div>
-                <button class="btn btn-outline-primary"  >Editar</button>
-                <button class="btn btn-outline-primary" style="width: 50%;" >Guardar</button>
-                <button  class="btn btn-outline-secondary">Eliminar</button>
-
+               <!-- <button class="btn btn-outline-primary">Editar</button> -->
+                <button class="btn btn-outline-primary" style="width: 50%;"  >Guardar</button>
             </form>
-
+            <form (ngSubmit)="eliminar()">
+              <a href="./contact.component.html"></a>
+              <input class="form-control" [(ngModel)]="formcontacto.id"  name="id" placeholder="Eliminar datos">
+              <button  class="btn btn-outline-secondary">Eliminar</button>
+            </form>
         </div>
     </div>
     <div class="col-2"></div>

@@ -10,6 +10,7 @@ import { PaisesService } from '../../services/paises.service';
 export class ContactComponent implements OnInit {
   formcontacto:formcontacto =
   {
+    id:0,
     nombre: ""
   }
  paises:any = [];
@@ -30,10 +31,15 @@ export class ContactComponent implements OnInit {
   save(){
     this.paisess.crearPais(this.formcontacto).subscribe((resp: any) => {console.log(resp)});
   }
+  eliminar(){
+    console.log(this.formcontacto)
+    this.paisess.elminarpais(this.formcontacto).subscribe((resp: any) => {console.log(resp)});
+  }
 }
 
 interface formcontacto
 {
+  id:number,
     nombre: string
 }
 
