@@ -24,20 +24,22 @@
                 <h2>Ingrese datos</h2>
                 <div>
                     <div class="d-flex gs18 md:fd-column new-login-form">
-                        <input  class="form-control mb3" style="width: 20%;" [(ngModel)]="formcontacto.nombre"  name="nombre" placeholder="Agregar locacion ">
-                        <input  class="form-control" style="width: 20%;" [(ngModel)]="formcontacto.costo"  name="costo" placeholder="costo ">
-                        <input  class="form-control" style="width: 20%;" [(ngModel)]="formcontacto.disponibilidad"  name="disponibilidad" placeholder="disponibilidad">
+                      <input  type="text" class="form-control" style="width: 33%;" value="90" disabled  name="nombre" placeholder="id ">
+                        <input  class="form-control" style="width: 33%;" [(ngModel)]="formcontacto.nombre"  name="nombre" placeholder="Agregar locacion ">
+                        <input  class="form-control" style="width: 33%;" [(ngModel)]="formcontacto.costo"  name="costo" placeholder="costo ">
+                        <input  class="form-control" style="width: 33%;" [(ngModel)]="formcontacto.disponibilidad"  name="disponibilidad" placeholder="disponibilidad">
                       </div>
                 </div>
+                
                <!-- <button class="btn btn-outline-primary">Editar</button> -->
-                <button   class="btn btn-outline-primary" style="width: 50%;"  >Guardar</button>
+                <button   class="btn btn-outline-primary" style="width: 100%;"  >Guardar</button>
             </form>
             <form (ngSubmit)="eliminar()">
              <!--<a href="./contact.component.html"></a>-->
 
 
               <input  class="form-control" [(ngModel)]="formcontacto.id"  name="id" placeholder="Id de la tabla que desea borrar">
-              <button  class="btn btn-outline-secondary">Eliminar</button>
+              <button   style="width: 100%;" class="btn btn-outline-secondary">Eliminar</button>
             </form>
         </div>
     </div>
